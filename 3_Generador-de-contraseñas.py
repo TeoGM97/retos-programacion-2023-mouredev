@@ -18,85 +18,98 @@ def generar_contrasena():
     numeros = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
     simbolos = ['*', '+', '-', '/', '@', '_', '?', '!', '[', '{', '(', ')', '}', ']', ',', ';', '.', '>', '<', '~', '°', '^', '&', '$', '#', '"']
 
-    caracteres = mayusculas + minusculas + numeros + simbolos
-
     contrasena = []
 
     num_caract = int(input('Escribe el numero de caracteres que tendra la contraseña: '))
 
-    wmay = str(input('Quieres que tenga mayuscula? (Si, No): '))
-    wmin = str(input('Quieres que tenga mayuscula? (Si, No): '))
-    wnum = str(input('Quieres que tenga mayuscula? (Si, No): '))
-    wsim = str(input('Quieres que tenga mayuscula? (Si, No): '))
+    wmay = str(input('Quieres que tenga mayuscula? (Si, No): ')).upper()
+    wmin = str(input('Quieres que tenga minuscula? (Si, No): ')).upper()
+    wnum = str(input('Quieres que tenga numeros? (Si, No): ')).upper()
+    wsim = str(input('Quieres que tenga simbolos? (Si, No): ')).upper()
 #Conditions
 ##1
-    if wmay == 'No' | 'no' | 'NO':
+    if wmay == 'NO':
+        caracteres = minusculas + numeros + simbolos
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[minusculas, numeros, simbolos])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
-    elif wmin == 'No' | 'no' | 'NO':
+    elif wmin == 'NO':
+        caracteres = mayusculas + numeros + simbolos
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[mayusculas, numeros, simbolos])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
-    elif wnum == 'No' | 'no' | 'NO':
+    elif wnum == 'NO':
+        caracteres = mayusculas + minusculas + simbolos
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[mayusculas, minusculas, simbolos])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
-    elif wsim == 'No' | 'no' | 'NO':
+    elif wsim == 'NO':
+        caracteres = mayusculas + minusculas + numeros
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[mayusculas, minusculas, numeros])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
 ##2
 #wmay
-    elif (wmay == 'No' | 'no' | 'NO') & (wmin == 'No' | 'no' | 'NO'):
+    elif (wmay == 'NO') & (wmin == 'NO'):
+        caracteres = numeros + simbolos
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[numeros, simbolos])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
-    elif (wmay == 'No' | 'no' | 'NO') & (wnum == 'No' | 'no' | 'NO'):
+    elif (wmay == 'NO') & (wnum == 'NO'):
+        caracteres = minusculas + simbolos
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[minusculas, simbolos])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
-    elif (wmay == 'No' | 'no' | 'NO') & (wsim == 'No' | 'no' | 'NO'):
+    elif (wmay == 'NO') & (wsim == 'NO'):
+        caracteres = minusculas + numeros
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[minusculas, numeros])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
 #wmin
-    elif (wmin == 'No' | 'no' | 'NO') & (wnum == 'No' | 'no' | 'NO'):
+    elif (wmin == 'NO') & (wnum == 'NO'):
+        caracteres = mayusculas + simbolos
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[mayusculas, simbolos])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
-    elif (wmin == 'No' | 'no' | 'NO') & (wsim == 'No' | 'no' | 'NO'):
+    elif (wmin == 'NO') & (wsim == 'NO'):
+        caracteres = mayusculas + numeros
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[mayusculas, numeros])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
 #wnum
-    elif (wnum == 'No' | 'no' | 'NO') & (wsim == 'No' | 'no' | 'NO'):
+    elif (wnum == 'NO') & (wsim == 'NO'):
+        caracteres = mayusculas + minusculas
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[mayusculas, minusculas])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
 ##3
 #only sim
-    elif (wmay == 'No' | 'no' | 'NO') & (wmin == 'No' | 'no' | 'NO') & (wnum == 'No' | 'no' | 'NO'):
+    elif (wmay == 'NO') & (wmin == 'NO') & (wnum == 'NO'):
+        caracteres = simbolos
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[simbolos])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
 #only num
-    elif (wmay == 'No' | 'no' | 'NO') & (wmin == 'No' | 'no' | 'NO') & (wsim == 'No' | 'no' | 'NO'):
+    elif (wmay == 'NO') & (wmin == 'NO') & (wsim == 'NO'):
+        caracteres = numeros
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[numeros])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
 #only may
-    elif (wsim == 'No' | 'no' | 'NO') & (wmin == 'No' | 'no' | 'NO') & (wnum == 'No' | 'no' | 'NO'):
+    elif (wsim == 'NO') & (wmin == 'NO') & (wnum == 'NO'):
+        caracteres = mayusculas
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[mayusculas])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
 #only min
-    elif (wmay == 'No' | 'no' | 'NO') & (wsim == 'No' | 'no' | 'NO') & (wnum == 'No' | 'no' | 'NO'):
+    elif (wmay == 'NO') & (wsim == 'NO') & (wnum == 'NO'):
+        caracteres = minusculas
         for i in range(num_caract):
-            caracter_random = random.choice(caracteres[minusculas])
+            caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
 ##0
     else:
+        caracteres = mayusculas + minusculas + numeros + simbolos
         for i in range(num_caract):
             caracter_random = random.choice(caracteres)
             contrasena.append(caracter_random)
@@ -106,7 +119,12 @@ def generar_contrasena():
 
 def run():
     contrasena = generar_contrasena()
-    print('Tu nueva contrasena es: ' + contrasena)
+    print('Tu nueva contrasena es: ')
+    print('**************')
+    print(' ')
+    print(contrasena)
+    print(' ')
+    print('**************')
 
 
 if __name__ == '__main__':
