@@ -9,7 +9,7 @@
 
 #Desarrollo:
 text = str(input('Escribe el texto a continuacion: '))
-regular_text = text.capitalize()
+regular_text = text.upper()
 
 hacker_letters ={
     "A":"4",
@@ -54,7 +54,8 @@ hacker_text = ""
 
 for i in range(len(regular_text)):
     regular_word = regular_text[i]
-    hacker_word = regular_word.replace(regular_word, hacker_letters[regular_word])
+    hacker_word = hacker_letters.get(regular_word, regular_word)
     hacker_text += hacker_word
 
-print(hacker_text)
+print('El texto que acabas de ingresar, es: ' + text)
+print('El texto en lenguaje hacker es: ' + hacker_text)
