@@ -20,7 +20,14 @@ def generar_contrasena():
 
     contrasena = []
 
-    num_caract = int(input('Escribe el numero de caracteres que tendra la contraseña: '))
+    while True:
+        num_caract = int(input('Escribe el número de caracteres que tendrá la contraseña (de 5 a 16 caracteres): '))
+        if num_caract >= 5 and num_caract <= 16:
+            break
+        else:
+            print('El número de caracteres debe ser de 5 a 16. Por favor, intenta de nuevo.')
+
+
 
     wmay = str(input('Quieres que tenga mayuscula? (Si, No): ')).upper()
     wmin = str(input('Quieres que tenga minuscula? (Si, No): ')).upper()
